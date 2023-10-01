@@ -9,3 +9,4 @@ W or Up arrow to move up
 S to Down arrow move down
 A to Left arrow move left
 D to Right arrow move right
+Rerun the program to restart the game
