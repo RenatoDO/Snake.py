@@ -102,10 +102,13 @@ def check_collisions(snake):
 def game_over(snake):
     canvas.delete(ALL)
     canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2,
-                       font=('consolas',70), text="GAME OVER", fill="red", tag="gameover")
+                       font=('consolas',70), text="GAME OVER\n", fill="red", tag="gameover")
+    canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2,
+                       font=('consolas',35), text="\nYour Score is:{}".format(score), fill="red", tag="score")
 
 def start():
     canvas.delete("gameover")
+    canvas.delete("score")
     snake = Snake()
     food = Food()
     next_turn(snake, food)
