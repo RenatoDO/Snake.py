@@ -6,8 +6,8 @@ from pygame import mixer
 
 GAME_WIDTH = 700
 GAME_HEIGHT = 700
-SPEED = 150
-SPACE_SIZE = 50
+SPEED = 150 #Less is faster
+SPACE_SIZE = 50 #25, 35
 BODY_PARTS = 3
 SNAKE_COLOR = "blue"
 FOOD_COLOR = "red"
@@ -128,10 +128,10 @@ def rules():
     Wrules.geometry("250x200")
  
     label = Label(Wrules, text='To play press GameStart', font=('consolas', 10)).pack(pady=10)
-    label2 = Label(Wrules, text='W to move up', font=('consolas', 10)).pack()
-    label3 = Label(Wrules, text='S to move down', font=('consolas', 10)).pack()
-    label4 = Label(Wrules, text='A to move left', font=('consolas', 10)).pack()
-    label5 = Label(Wrules, text='D to move right', font=('consolas', 10)).pack()
+    label2 = Label(Wrules, text='W or Up arrow to move up', font=('consolas', 10)).pack()
+    label3 = Label(Wrules, text='S or Down arrow to move down', font=('consolas', 10)).pack()
+    label4 = Label(Wrules, text='A or Left arrow to move left', font=('consolas', 10)).pack()
+    label5 = Label(Wrules, text='D or Right arrow to move right', font=('consolas', 10)).pack()
     label6 = Label(Wrules, text='Close game to restart', font=('consolas', 10)).pack(pady=10)
 
 
@@ -183,9 +183,13 @@ label.pack(pady=10)
 window.update()
 
 window.bind('<a>', lambda event: change_direction('left'))
+window.bind('<Left>', lambda event: change_direction('left'))
 window.bind('<d>', lambda event: change_direction('right'))
+window.bind('<Right>', lambda event: change_direction('right'))
 window.bind('<w>', lambda event: change_direction('up'))
+window.bind('<Up>', lambda event: change_direction('up'))
 window.bind('<s>', lambda event: change_direction('down'))
+window.bind('<Down>', lambda event: change_direction('down'))
 
 
 window.mainloop()
